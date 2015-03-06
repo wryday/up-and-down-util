@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Up And Down Scoring</string>
+    <string name="banner_name">Up and Down!</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="about_button">About</string>
+    <string name="new_game_button">New Game</string>
+
+    <string name="about_blurb">
+Up and Down is a card game using a standard poker deck that can be played by 3-7 players (with some flexibility) that is quick to learn and fun to play!
+\n\nGameplay:
+\n\nA game of Up and Down can be played with either a 5 or 7 card starting hand, with the Dealer turning over the top card remaining after dealing.  This card’s suit is now trump. The person left of the dealer bids on the number of tricks they believe they can take, with the goal for each hand being to take exactly the number of tricks you bid on in the opening round.
+\n\nScoring:
+\n\nIf the player gets the exact number of tricks they bid, they get that number plus ten points (e.g. if you bid 4 and took 4, you would get 14 points).
+\n\nIf the player does not get the exact number they bid, they get the higher of the two numbers (bid vs actual) subtracted from their score.
+\n\nWinning:
+\n\nThe winner is the player with the highest score after completing all rounds of the game.
+    </string>
+</resources>
