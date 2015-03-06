@@ -7,6 +7,7 @@
 
     <string name="about_button">About</string>
     <string name="new_game_button">New Game</string>
+    <string name="start_game_button">Start Game</string>
 
     <string name="about_blurb">
 Up and Down is a card game using a standard poker deck that can be played by 3-7 players (with some flexibility) that is quick to learn and fun to play!
