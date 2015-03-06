@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".AboutActivity" />
         <activity android:name=".SetupActivity" />
+        <activity android:name=".ScoringActivity" />
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.wryday.upanddownscoring;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,6 +21,7 @@ import java.util.List;
 public class SetupActivity extends Activity {
 
     private ListView mListView;
+    private Button mStartGameButton;
 
     private PlayerAdapter mAdapter;
 
@@ -34,6 +37,15 @@ public class SetupActivity extends Activity {
         mListView = (ListView) findViewById(R.id.list_view);
         mAdapter = new PlayerAdapter(this);
         mListView.setAdapter(mAdapter);
+
+        mStartGameButton = (Button) findViewById(R.id.start_game_button);
+        mStartGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), ScoringActivity.class);
+                startActivity(startIntent);
+            }
+        });
     }
 
     private class PlayerAdapter extends BaseAdapter {
