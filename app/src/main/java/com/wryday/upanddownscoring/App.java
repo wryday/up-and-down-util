@@ -14,17 +14,20 @@ public class App extends Application {
         return sContext;
     }
 
-    public static String getFlurryApiKey() {
-        return BuildConfig.DEBUG ?
-                sContext.getString(R.string.flurry_key_debug) :
-                sContext.getString(R.string.flurry_key_production);
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();
-        LeakCanary.install(this);
 
-        FlurryAgent.init(this, App.getFlurryApiKey());
+        sContext = this;
+
+        // Add-On Initialization
+        LeakCanary.install(this);
+        FlurryAgent.init(this, getFlurryApiKey());
+    }
+
+    public String getFlurryApiKey() {
+        return BuildConfig.DEBUG ?
+                getString(R.string.flurry_key_debug) :
+                getString(R.string.flurry_key_production);
     }
 }
