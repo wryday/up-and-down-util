@@ -90,9 +90,10 @@
     <orderEntry type="library" exported="" name="appcompat-v7-22.1.1" level="project" />
     <orderEntry type="library" exported="" name="leakcanary-watcher-1.3" level="project" />
     <orderEntry type="library" exported="" name="leakcanary-android-1.3" level="project" />
+    <orderEntry type="library" exported="" name="FlurryAnalytics-5.5.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
     <orderEntry type="library" exported="" name="leakcanary-analyzer-1.3" level="project" />
     <orderEntry type="library" exported="" name="haha-1.1" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
   </component>
 </module>

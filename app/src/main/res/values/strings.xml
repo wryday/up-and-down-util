@@ -19,4 +19,8 @@ Up and Down is a card game using a standard poker deck that can be played by 3-7
 \n\nWinning:
 \n\nThe winner is the player with the highest score after completing all rounds of the game.
     </string>
+
+    <!-- API KEYS -->
+    <string name="flurry_key_debug">X7HY9H2SD93NHS6549XF</string>
+    <string name="flurry_key_production">XYV4RBZ9C24JR9KZJ6H2</string>
 </resources>
