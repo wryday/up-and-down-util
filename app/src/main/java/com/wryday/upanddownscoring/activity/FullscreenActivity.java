@@ -1,4 +1,4 @@
-package com.wryday.upanddownscoring;
+package com.wryday.upanddownscoring.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import com.wryday.upanddownscoring.R;
 
 public class FullscreenActivity extends Activity {
 

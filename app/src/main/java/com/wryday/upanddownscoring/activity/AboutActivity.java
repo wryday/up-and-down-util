@@ -1,9 +1,11 @@
-package com.wryday.upanddownscoring;
+package com.wryday.upanddownscoring.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.wryday.upanddownscoring.R;
 
 public class AboutActivity extends Activity {
 

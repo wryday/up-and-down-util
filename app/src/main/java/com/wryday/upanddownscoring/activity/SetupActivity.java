@@ -1,4 +1,4 @@
-package com.wryday.upanddownscoring;
+package com.wryday.upanddownscoring.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.wryday.upanddownscoring.R;
 
 import java.util.ArrayList;
 import java.util.List;
