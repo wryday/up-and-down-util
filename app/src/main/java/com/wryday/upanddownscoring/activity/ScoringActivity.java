@@ -22,6 +22,9 @@ public class ScoringActivity extends Activity {
 
     private RoundAdapter mAdapter;
 
+    private List<Player> mPlayers;
+    private int mNumberOfRounds;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +34,16 @@ public class ScoringActivity extends Activity {
 
         setContentView(R.layout.activity_scoring);
 
-        List<Player> players = new ArrayList<>();
-        players.add(new Player("Joe", 0, 0));
-        players.add(new Player("Rena", 0, 0));
-        players.add(new Player("Ed", 0, 0));
-        players.add(new Player("Erica", 0, 0));
+        mPlayers = new ArrayList<>();
+        mPlayers.add(new Player("Joe", 0, 0));
+        mPlayers.add(new Player("Rena", 0, 0));
+        mPlayers.add(new Player("Ed", 0, 0));
+        mPlayers.add(new Player("Erica", 0, 0));
+
+        mNumberOfRounds = 7;
 
         mListView = (ListView) findViewById(R.id.list_view);
-        mAdapter = new RoundAdapter(players, 13);
+        mAdapter = new RoundAdapter(mPlayers, mNumberOfRounds + mNumberOfRounds - 1);
         mListView.setAdapter(mAdapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
