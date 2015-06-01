@@ -12,10 +12,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
+import com.wryday.upanddownscoring.Constant;
 import com.wryday.upanddownscoring.R;
+import com.wryday.upanddownscoring.SharedPreferencesManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +29,29 @@ public class SetupActivity extends Activity {
     private ListView mListView;
     private Button mStartGameButton;
 
+    private RadioGroup mRadioGroup;
+    private RadioButton mRadioFive;
+    private RadioButton mRadioSeven;
+
     private PlayerAdapter mAdapter;
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (mRadioFive.isChecked()) {
+                SharedPreferencesManager.getInstance(getApplicationContext()).setGameType(Constant.GAME_TYPE_5_CARD);
+            } else if (mRadioSeven.isChecked()) {
+                SharedPreferencesManager.getInstance(getApplicationContext()).setGameType(Constant.GAME_TYPE_7_CARD);
+            }
+
+            Intent startIntent = new Intent(getApplicationContext(), ScoringActivity.class);
+
+            startIntent.putExtra(Constant.PLAYER_NAMES, mAdapter.getNames());
+
+            startActivity(startIntent);
+            finish();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +62,24 @@ public class SetupActivity extends Activity {
 
         setContentView(R.layout.activity_setup);
 
+        String gameType = SharedPreferencesManager.getInstance(getApplicationContext()).getGameType();
+
+        mRadioGroup = (RadioGroup) findViewById(R.id.radio_group);
+        mRadioFive = (RadioButton) findViewById(R.id.radio_5);
+        mRadioSeven = (RadioButton) findViewById(R.id.radio_7);
+
+        if (gameType.equals(Constant.GAME_TYPE_5_CARD)) {
+            mRadioFive.setChecked(true);
+        } else if (gameType.equals(Constant.GAME_TYPE_7_CARD)) {
+            mRadioSeven.setChecked(true);
+        }
+
         mListView = (ListView) findViewById(R.id.list_view);
         mAdapter = new PlayerAdapter(this);
         mListView.setAdapter(mAdapter);
 
         mStartGameButton = (Button) findViewById(R.id.start_game_button);
-        mStartGameButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), ScoringActivity.class);
-                startActivity(startIntent);
-            }
-        });
+        mStartGameButton.setOnClickListener(mOnClickListener);
     }
 
     private class PlayerAdapter extends BaseAdapter {
@@ -103,15 +135,19 @@ public class SetupActivity extends Activity {
             return mPlayers.get(position);
         }
 
+        public String[] getNames() {
+            return mPlayers.toArray(new String[mPlayers.size()]);
+        }
+
         private class ViewHolder {
-            private TextView mNameTextView;
+            private EditText mNameEditText;
 
             public ViewHolder(View root) {
-                mNameTextView = (TextView) root.findViewById(R.id.name_text_view);
+                mNameEditText = (EditText) root.findViewById(R.id.name_edit_text);
             }
 
             public void bind(String name) {
-                mNameTextView.setText(name);
+                mNameEditText.setText(name);
             }
         }
     }

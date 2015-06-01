@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#0099cc"
     android:layout_width="match_parent"
-    android:padding="8dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
-        android:text="Setup"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:textSize="24sp"
-        android:padding="8dp"
-        android:layout_height="wrap_content" />
-
-    <ToggleButton
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New ToggleButton"
-        android:id="@+id/toggleButton" />
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp"
+        android:text="Setup"
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Card Game" />
+
+        <RadioButton
+            android:id="@+id/radio_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 Card Game" />
+    </RadioGroup>
 
     <ListView
-        android:padding="8dp"
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="8dp" />
 
     <Button
-        android:layout_gravity="center_horizontal"
         android:id="@+id/start_game_button"
         android:layout_width="wrap_content"
-        android:text="@string/start_game_button"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/start_game_button" />
 </LinearLayout>
